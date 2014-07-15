@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Git API Sandbox</title>
+    </head>
+
+    <body>
+        <script>
+            xmlHttp = new XMLHttpRequest();
+            xmlHttp.open('GET', 'https://api.github.com/users/chessmasterhong', false);
+            xmlHttp.send();
+            console.log(xmlHttp.responseText);
+        </script>
+    </body>
+</html>
