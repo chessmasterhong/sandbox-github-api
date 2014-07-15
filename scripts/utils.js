@@ -1,6 +1,11 @@
-function httpGet(url) {
-    xmlHttp = new XMLHttpRequest();
+function httpGet(url, json_output) {
+    if(typeof json_output === 'undefined') {
+        json_output = true;
+    }
+
+    var xmlHttp = new XMLHttpRequest();
     xmlHttp.open('GET', url, false);
     xmlHttp.send();
-    return xmlHttp.responseText;
+
+    return json_output === false ? xmlHttp.responseText : JSON.parse(xmlHttp.responseText);
 }
