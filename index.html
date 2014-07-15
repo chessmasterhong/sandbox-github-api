@@ -6,10 +6,15 @@
 
     <body>
         <script>
-            xmlHttp = new XMLHttpRequest();
-            xmlHttp.open('GET', 'https://api.github.com/users/chessmasterhong', false);
-            xmlHttp.send();
-            console.log(xmlHttp.responseText);
+            function httpGet(url) {
+                xmlHttp = new XMLHttpRequest();
+                xmlHttp.open('GET', url, false);
+                xmlHttp.send();
+                return xmlHttp.responseText;
+            }
+
+            var reqUrl = httpGet('https://api.github.com/users/chessmasterhong');
+            console.log(reqUrl);
         </script>
     </body>
 </html>
