@@ -5,16 +5,7 @@
     </head>
 
     <body>
-        <script>
-            function httpGet(url) {
-                xmlHttp = new XMLHttpRequest();
-                xmlHttp.open('GET', url, false);
-                xmlHttp.send();
-                return xmlHttp.responseText;
-            }
-
-            var reqUrl = httpGet('https://api.github.com/users/chessmasterhong');
-            console.log(reqUrl);
-        </script>
+        <script src="scripts/utils.js"></script>
+        <script src="scripts/get_repos.js"></script>
     </body>
 </html>
