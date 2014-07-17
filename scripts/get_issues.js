@@ -1,3 +1,5 @@
+// Get total issues opened and total issues assigned by each contributor
+
 var REPO_NAME = 'impact-atmosphere';
 
 var contributors = getContributors(REPO_NAME, CLIENT.ID, CLIENT.SECRET);
