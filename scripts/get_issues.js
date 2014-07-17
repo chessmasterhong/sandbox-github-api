@@ -1,4 +1,4 @@
-// Get total issues opened and total issues assigned by each contributor
+// Get total issues opened count and total issues assigned count by each contributor
 
 var REPO_NAME = 'WaterEmblem';
 

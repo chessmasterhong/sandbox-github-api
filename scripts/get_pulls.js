@@ -1,4 +1,4 @@
-// Get total pull requests opened by each contributor
+// Get total pull requests opened count by each contributor
 
 var REPO_NAME = 'WaterEmblem';
 

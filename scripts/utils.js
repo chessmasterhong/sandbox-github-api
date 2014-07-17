@@ -1,3 +1,7 @@
+// Common utility functions
+
+// Returns JSON formatted response text from url string parameter.
+// json_output is an optonal boolean parameter that determies if output should be in JSON (true) or string format (false). Default is true.
 function httpGet(url, json_output) {
     if(typeof json_output === 'undefined') {
         json_output = true;
@@ -10,6 +14,8 @@ function httpGet(url, json_output) {
     return json_output === false ? xmlHttp.responseText : JSON.parse(xmlHttp.responseText);
 }
 
+// Returns array of contributors for repo_name string parameter.
+// client_id and client_secret are optional string parameters for the GitHub API.
 function getContributors(repo_name, client_id, client_secret) {
     var contributors = [];
 
