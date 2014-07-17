@@ -2,6 +2,10 @@
 
 My attempt at learning the [GitHub API](https://developer.github.com/v3).
 
+Development (via JavaScript) in conjunction with [https://github.com/DrkSephy/git-api](https://github.com/DrkSephy/git-api).
+
+
+## TODO
 
 ```
 [X] [get_commits.js ] Given a repository, return the number of commits made by each contributor.
@@ -16,7 +20,8 @@ My attempt at learning the [GitHub API](https://developer.github.com/v3).
 [X] [get_issues.js  ] Given a repository, return all issues.
 ```
 
+## Miscellaneous Scripts
 
-`get_contributors.js`: Gets all contributor names for a specific repository. Sample script testing the `getContributors()` function in `utils.js`.
-`get_repos.js`: Gets all public repositories for a specific user.
-`utils.js`: Common utility functions.
+* `get_contributors.js`: Gets all contributor names for a specific repository. Sample script testing the `getContributors()` function in `utils.js`.
+* `get_repos.js`: Gets all public repositories for a specific user.
+* `utils.js`: Common utility functions.
