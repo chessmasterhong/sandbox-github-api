@@ -1,6 +1,6 @@
 // Get total issues opened and total issues assigned by each contributor
 
-var REPO_NAME = 'impact-atmosphere';
+var REPO_NAME = 'WaterEmblem';
 
 var contributors = getContributors(REPO_NAME, CLIENT.ID, CLIENT.SECRET);
 
@@ -30,4 +30,8 @@ for(var issue_index = 0; issue_index < data.length; issue_index++) {
 
 for(var c = 0; c < contributors.length; c++) {
     document.write(contributor_data[c].name + ': ' + contributor_data[c].issues_opened + ' opened total, ' + contributor_data[c].issues_assigned + ' assigned total<br>');
+}
+
+for(var repo_index = 0; repo_index < data.length; repo_index++) {
+    document.write('<p><strong>Issue #' + data[repo_index].number + '</strong>: ' + data[repo_index].title + ' (opened by ' + data[repo_index].user.login + ')<br>' + data[repo_index].body + '</p>');
 }
