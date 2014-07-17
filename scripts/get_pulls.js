@@ -22,5 +22,5 @@ for(var pull_index = 0; pull_index < data.length; pull_index++) {
 }
 
 for(var contributor_index = 0; contributor_index < contributors.length; contributor_index++) {
-    document.write(contributors[contributor_index] + ': ' + contributor_pulls[contributor_index] + '<br>');
+    document.getElementById('output').innerHTML += contributors[contributor_index] + ': ' + contributor_pulls[contributor_index] + '<br>';
 }

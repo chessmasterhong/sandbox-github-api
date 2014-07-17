@@ -46,5 +46,5 @@ for(var issue_index = 0; issue_index < data_issues.length; issue_index++) {
 }
 
 for(var c = 0; c < contributors.length; c++) {
-    document.write(contributor_comments[c].name + ': ' + contributor_comments[c].commit_comments + ' comments commits, ' + contributor_comments[c].issue_comments + ' issue comments, '  + contributor_comments[c].pull_comments + ' pull request comments<br>');
+    document.getElementById('output').innerHTML += contributor_comments[c].name + ': ' + contributor_comments[c].commit_comments + ' comments commits, ' + contributor_comments[c].issue_comments + ' issue comments, '  + contributor_comments[c].pull_comments + ' pull request comments<br>';
 }

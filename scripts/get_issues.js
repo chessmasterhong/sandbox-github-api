@@ -31,9 +31,9 @@ for(var issue_index = 0; issue_index < data.length; issue_index++) {
 }
 
 for(var c = 0; c < contributors.length; c++) {
-    document.write(contributor_issues[c].name + ': ' + contributor_issues[c].issues_opened + ' opened total, ' + contributor_issues[c].issues_assigned + ' assigned total<br>');
+    document.getElementById('output').innerHTML += contributor_issues[c].name + ': ' + contributor_issues[c].issues_opened + ' opened total, ' + contributor_issues[c].issues_assigned + ' assigned total<br>';
 }
 
 for(var repo_index = 0; repo_index < data.length; repo_index++) {
-    document.write('<p><strong>Issue #' + data[repo_index].number + '</strong>: ' + data[repo_index].title + ' (opened by ' + data[repo_index].user.login + ')<br>' + data[repo_index].body + '</p>');
+    document.getElementById('output').innerHTML += '<p><strong>Issue #' + data[repo_index].number + '</strong>: ' + data[repo_index].title + ' (opened by ' + data[repo_index].user.login + ')<br>' + data[repo_index].body + '</p>';
 }

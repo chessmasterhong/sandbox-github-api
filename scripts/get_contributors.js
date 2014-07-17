@@ -4,4 +4,4 @@
 
 var REPO_NAME = 'WaterEmblem';
 
-document.write(getContributors(REPO_NAME, CLIENT.ID, CLIENT.SECRET));
+document.getElementById('output').innerHTML = getContributors(REPO_NAME, CLIENT.ID, CLIENT.SECRET);
