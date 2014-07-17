@@ -1,5 +1,7 @@
 // Common utility functions
 
+'use strict';
+
 // Returns JSON formatted response text from url string parameter.
 // json_output is an optonal boolean parameter that determies if output should be in JSON (true) or string format (false). Default is true.
 function httpGet(url, json_output) {
@@ -19,7 +21,7 @@ function httpGet(url, json_output) {
 function getContributors(repo_name, client_id, client_secret) {
     var contributors = [];
 
-    var url = GITHUB_API_BASE_URL + '/repos/' + REPO_OWNER + '/' + REPO_NAME + '/contributors'
+    var url = GITHUB_API_BASE_URL + '/repos/' + REPO_OWNER + '/' + REPO_NAME + '/contributors';
 
     if(typeof client_id !== 'undefined' && typeof client_secret !== 'undefined') {
         url += '?client_id=' + client_id + '&client_secret=' + client_secret;

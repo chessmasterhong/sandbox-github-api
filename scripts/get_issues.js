@@ -1,5 +1,7 @@
 // Get total issues opened count and total issues assigned count by each contributor
 
+'use strict';
+
 var REPO_NAME = 'WaterEmblem';
 
 var contributors = getContributors(REPO_NAME, CLIENT.ID, CLIENT.SECRET);
@@ -11,7 +13,7 @@ for(var contributor_index = 0; contributor_index < contributors.length; contribu
         'name': contributors[contributor_index],
         'issues_opened': 0,
         'issues_assigned': 0
-    }
+    };
 }
 
 var data = httpGet(GITHUB_API_BASE_URL + '/repos/' + REPO_OWNER + '/' + REPO_NAME + '/issues?state=all&client_id=' + CLIENT.ID + '&client_secret=' + CLIENT.SECRET);

@@ -1,5 +1,7 @@
 // Get total commit comment count, total issue comment count, and total pull request comment count made by each contributor
 
+'use strict';
+
 var REPO_NAME = 'WaterEmblem';
 
 var contributors = getContributors(REPO_NAME, CLIENT.ID, CLIENT.SECRET);
@@ -12,7 +14,7 @@ for(var contributor_index = 0; contributor_index < contributors.length; contribu
         'commit_comments': 0,
         'issue_comments': 0,
         'pull_comments': 0
-    }
+    };
 }
 
 var data_commits = httpGet(GITHUB_API_BASE_URL + '/repos/' + REPO_OWNER + '/' + REPO_NAME + '/comments?client_id=' + CLIENT.ID + '&client_secret=' + CLIENT.SECRET);

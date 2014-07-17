@@ -1,5 +1,7 @@
 // Get total pull requests opened count by each contributor
 
+'use strict';
+
 var REPO_NAME = 'WaterEmblem';
 
 var contributors = getContributors(REPO_NAME, CLIENT.ID, CLIENT.SECRET);
