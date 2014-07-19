@@ -21,11 +21,11 @@ for(var contributor_index = 0; contributor_index < contributors.length; contribu
 // Get all issues from API
 var data = httpGet(GITHUB_API_BASE_URL + '/repos/' + REPO_OWNER + '/' + REPO_NAME + '/issues?state=all&client_id=' + CLIENT.ID + '&client_secret=' + CLIENT.SECRET);
 
-// For each pull request ...
+// For each issue ...
 for(var issue_index = 0; issue_index < data.length; issue_index++) {
     for(var contributor_index = 0; contributor_index < contributors.length; contributor_index++) {
         // ... match opened issue username with contributor username and increment contributor's opened issue count by 1
-        if(data[issue_index].user.login === contributor_issues[contributor_index].name) {
+        if(!data[issue_index].pull_request && data[issue_index].user.login === contributor_issues[contributor_index].name) {
             contributor_issues[contributor_index].issues_opened++;
         }
 
