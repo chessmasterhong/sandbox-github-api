@@ -2,9 +2,6 @@
 
 'use strict';
 
-// The target repository
-var REPO_NAME = 'WaterEmblem';
-
 // Get repository contributors' statistics from API
 var data = httpGet(GITHUB_API_BASE_URL + '/repos/' + REPO_OWNER + '/' + REPO_NAME + '/stats/contributors?client_id=' + CLIENT.ID + '&client_secret=' + CLIENT.SECRET);
 

@@ -2,9 +2,6 @@
 
 'use strict';
 
-// The target repository
-var REPO_NAME = 'WaterEmblem';
-
 // Get repository contributor names from API
 var contributors = getContributors(REPO_NAME, CLIENT.ID, CLIENT.SECRET);
 
