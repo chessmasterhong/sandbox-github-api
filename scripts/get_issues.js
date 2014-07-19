@@ -65,6 +65,8 @@ for(var c = 0; c < contributors.length; c++) {
 }
 
 // For each issue, output issue content
-for(var repo_index = 0; repo_index < data.length; repo_index++) {
-    document.getElementById('output').innerHTML += '<p><strong>Issue #' + data[repo_index].number + '</strong>: ' + data[repo_index].title + ' (opened by ' + data[repo_index].user.login + ')<br>' + data[repo_index].body + '</p>';
+for(var issue_index = 0; issue_index < data.length; issue_index++) {
+    if(!data[issue_index].pull_request) {
+        document.getElementById('output').innerHTML += '<p><strong>Issue #' + data[issue_index].number + '</strong>: ' + data[issue_index].title + ' (opened by ' + data[issue_index].user.login + ')<br>' + data[issue_index].body + '</p>';
+    }
 }
