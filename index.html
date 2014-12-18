@@ -14,15 +14,17 @@
             </p>
         </div>
 
-        <ul>
-            <li><a href="#/comments">Get comment count (commits, issues, and pull requests) for a repository grouped by contributors</a></li>
-            <li><a href="#/commits">Get commits for a repository grouped by contributors</a></li>
-            <li><a href="#/contributors">Get contributors for a repository</a></li>
-            <li><a href="#/issues">Get issue count (opened, and assigned) for a repository grouped by contributors</a></li>
-            <li><a href="#/pulls">Get pull request count for a repository grouped by contributors</a></li>
-            <li><a href="#/repos">Get repositories for a user</a></li>
-            <li><a href="#/lines">Get line additions and deletions for a repository grouped by contributors</a></li>
-        </li>
+        <div>
+            <ul>
+                <li><a href="#/comments">Get comment count (commits, issues, and pull requests) for a repository grouped by contributors</a></li>
+                <li><a href="#/commits">Get commits for a repository grouped by contributors</a></li>
+                <li><a href="#/contributors">Get contributors for a repository</a></li>
+                <li><a href="#/issues">Get issue count (opened, and assigned) for a repository grouped by contributors</a></li>
+                <li><a href="#/pulls">Get pull request count for a repository grouped by contributors</a></li>
+                <li><a href="#/repos">Get repositories for a user</a></li>
+                <li><a href="#/lines">Get line additions and deletions for a repository grouped by contributors</a></li>
+            </li>
+        </div>
 
         <div data-ui-view></div>
 
@@ -31,5 +33,6 @@
 
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/reposController.js"></script>
+        <script src="scripts/factories/reposFactory.js"></script>
     </body>
 </html>
