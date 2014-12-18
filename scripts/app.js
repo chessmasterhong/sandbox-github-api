@@ -7,40 +7,46 @@ var REPO_NAME = 'WaterEmblem';
 var CLIENT = {
     ID: 'YOUR_GITHUB_API_CLIENT_ID',
     SECRET: 'YOUR_GITHUB_API_CLIENT_SECRET'
-}
+};
 
 var app = angular.module('app', [
     'ui.router'
-]);
-
-app.config(function($stateProvider) {
+])
+.config(function($stateProvider) {
     $stateProvider
         .state('comments', {
             url: '/comments'
-            //templateUrl: ''
+            //controller: 'comments',
+            //templateUrl: 'partials/comments.partial.html'
         })
         .state('commits', {
             url: '/commits'
-            //templateUrl: ''
+            //controller: 'commits',
+            //templateUrl: 'partials/commits.partial.html'
         })
         .state('contributors', {
             url: '/contributors'
-            //templateUrl: ''
+            //controller: 'contributors',
+            //templateUrl: 'partials/contributors.partial.html'
         })
         .state('issues', {
             url: '/issues'
-            //templateUrl: ''
+            //controller: 'issues',
+            //templateUrl: 'partials/issues.partial.html'
         })
         .state('pulls', {
             url: '/pulls'
-            //templateUrl: ''
+            //controller: 'pulls',
+            //templateUrl: 'partials/pulls.partial.html'
         })
         .state('repos', {
-            url: '/repos'
-            //templateUrl: ''
+            url: '/repos',
+            controller: 'reposController',
+            templateUrl: 'partials/repos.partial.html'
         })
         .state('lines', {
             url: '/lines'
-            //templateUrl: ''
+            //controller: 'lines',
+            //templateUrl: 'partials/lines.partial.html'
         });
 });
