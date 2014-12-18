@@ -1,1 +1,15 @@
-{{ repos }}
+<table>
+    <tr>
+        <th>Repository Name</th>
+        <th>Stargazers</th>
+        <th>Watchers</th>
+        <th>Forks</th>
+    </tr>
+
+    <tr data-ng-repeat="repo in repos">
+        <td>{{ repo.name }}</td>
+        <td>{{ repo.stargazers_count }}</td>
+        <td>{{ repo.watchers_count }}</td>
+        <td>{{ repo.forks_count }}</td>
+    </tr>
+</table>
