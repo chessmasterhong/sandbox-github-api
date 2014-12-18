@@ -1,12 +1,10 @@
-var GITHUB_API_BASE_URL = 'https://api.github.com';
-
 var REPO_OWNER = 'chessmasterhong';
 
 var REPO_NAME = 'WaterEmblem';
 
 var CLIENT = {
-    ID: 'YOUR_GITHUB_API_CLIENT_ID',
-    SECRET: 'YOUR_GITHUB_API_CLIENT_SECRET'
+    ID: '',
+    SECRET: ''
 };
 
 var app = angular.module('app', [
@@ -14,29 +12,34 @@ var app = angular.module('app', [
 ])
 .config(function($stateProvider) {
     $stateProvider
+        .state('home', {
+            url: '',
+            controller: 'homeController',
+            templateUrl: 'partials/home.partial.html'
+        })
         .state('comments', {
             url: '/comments'
-            //controller: 'comments',
+            //controller: 'commentsController',
             //templateUrl: 'partials/comments.partial.html'
         })
         .state('commits', {
             url: '/commits'
-            //controller: 'commits',
+            //controller: 'commitsController',
             //templateUrl: 'partials/commits.partial.html'
         })
         .state('contributors', {
             url: '/contributors'
-            //controller: 'contributors',
+            //controller: 'contributorsController',
             //templateUrl: 'partials/contributors.partial.html'
         })
         .state('issues', {
             url: '/issues'
-            //controller: 'issues',
+            //controller: 'issuesController',
             //templateUrl: 'partials/issues.partial.html'
         })
         .state('pulls', {
             url: '/pulls'
-            //controller: 'pulls',
+            //controller: 'pullsController',
             //templateUrl: 'partials/pulls.partial.html'
         })
         .state('repos', {
@@ -46,7 +49,7 @@ var app = angular.module('app', [
         })
         .state('lines', {
             url: '/lines'
-            //controller: 'lines',
+            //controller: 'linesController',
             //templateUrl: 'partials/lines.partial.html'
         });
 });

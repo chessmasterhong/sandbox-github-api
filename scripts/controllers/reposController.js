@@ -1,9 +1,9 @@
-app.controller('reposController', function($scope, reposFactory) {
+app.controller('reposController', function($scope, githubAPIFactory) {
     'use strict';
 
     $scope.repos = [];
 
-    reposFactory.get(REPO_OWNER, CLIENT)
+    githubAPIFactory.getRepos(REPO_OWNER, CLIENT)
         .success(function(response) {
             console.log(response)
             $scope.repos = response;
