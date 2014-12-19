@@ -2,19 +2,16 @@ app.controller('homeController', function($scope, githubAPIFactory, appService) 
     'use strict';
 
     $scope.submitQuery = function() {
-        var user = $scope.user,
-            repo = $scope.repo;
-
-        githubAPIFactory.getUser(user, CLIENT)
-            .success(function() {
-                githubAPIFactory.getRepos(user, CLIENT)
+        githubAPIFactory.getUser($scope.user, CLIENT)
+            .success(function(user) {
+                githubAPIFactory.getRepos(user.login, CLIENT)
                     .success(function(repos) {
                         var foundRepo = false;
 
                         for(var i = 0; i < repos.length; i++) {
-                            if(repos.name === repo) {
-                                appService.setUser($scope.user);
-                                appService.setRepo($scope.repo);
+                            if(repos[i].name.toLowerCase() === $scope.repo.toLowerCase()) {
+                                appService.setUser(user.login);
+                                appService.setRepo(repos[i].name);
                                 foundRepo = true;
                                 break;
                             }
