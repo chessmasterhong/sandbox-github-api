@@ -1,7 +1,3 @@
-var REPO_OWNER = 'chessmasterhong';
-
-var REPO_NAME = 'WaterEmblem';
-
 var CLIENT = {
     ID: '',
     SECRET: ''
@@ -41,11 +37,6 @@ var app = angular.module('app', [
             url: '/pulls'
             //controller: 'pullsController',
             //templateUrl: 'partials/pulls.partial.html'
-        })
-        .state('repos', {
-            url: '/repos',
-            controller: 'reposController',
-            templateUrl: 'partials/repos.partial.html'
         })
         .state('lines', {
             url: '/lines'
