@@ -19,6 +19,8 @@ app.controller('homeController', function($scope, githubAPIFactory, appService) 
 
                         if(!foundRepo) {
                             console.log('Cannot find repository name.');
+                        } else {
+                            $scope.$emit('foundRepo', foundRepo);
                         }
                     });
             })

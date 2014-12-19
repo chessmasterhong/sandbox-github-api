@@ -10,8 +10,16 @@ var app = angular.module('app', [
     $stateProvider
         .state('home', {
             url: '',
-            controller: 'homeController',
-            templateUrl: 'partials/home.partial.html'
+            views: {
+                '': {
+                    controller: 'homeController',
+                    templateUrl: 'partials/home.partial.html',
+                },
+                'contributors': {
+                    controller: 'contributorsController',
+                    templateUrl: 'partials/contributors.partial.html'
+                }
+            }
         })
         .state('comments', {
             url: '/comments'
@@ -22,11 +30,6 @@ var app = angular.module('app', [
             url: '/commits'
             //controller: 'commitsController',
             //templateUrl: 'partials/commits.partial.html'
-        })
-        .state('contributors', {
-            url: '/contributors'
-            //controller: 'contributorsController',
-            //templateUrl: 'partials/contributors.partial.html'
         })
         .state('issues', {
             url: '/issues'
@@ -43,4 +46,11 @@ var app = angular.module('app', [
             //controller: 'linesController',
             //templateUrl: 'partials/lines.partial.html'
         });
+})
+.run(function($rootScope) {
+    'use strict';
+
+    $rootScope.$on('foundRepo', function(event, data) {
+        $rootScope.$broadcast('foundRepo', data);
+    });
 });
