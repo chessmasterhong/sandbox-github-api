@@ -4,3 +4,13 @@
     <input type="text" data-ng-model="repo" placeholder="Repository Name" required>
     <button type="submit">Generate Report</button>
 </form>
+
+<div data-ng-if="foundRepo">
+    <h1>Report for {{ user }}/{{ repo }}</h1>
+
+    <table>
+        <tr data-ng-repeat="contributor in contributors">
+            <td>{{ contributor.login }}</td>
+        </tr>
+    </table>
+</div>
