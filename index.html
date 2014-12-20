@@ -6,28 +6,15 @@
     </head>
 
     <body data-ng-app="app">
-        <div>
-            <ul>
-                <li><a href="#/comments">Get comment count (commits, issues, and pull requests) for a repository grouped by contributors</a></li>
-                <li><a href="#/commits">Get commits for a repository grouped by contributors</a></li>
-                <li><a href="#/contributors">Get contributors for a repository</a></li>
-                <li><a href="#/issues">Get issue count (opened, and assigned) for a repository grouped by contributors</a></li>
-                <li><a href="#/pulls">Get pull request count for a repository grouped by contributors</a></li>
-                <li><a href="#/lines">Get line additions and deletions for a repository grouped by contributors</a></li>
-            </li>
-        </div>
-
         <div data-ui-view></div>
 
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.11/angular-ui-router.js"></script>
+        <script src="//d3js.org/d3.v3.js"></script>
 
         <script src="scripts/app.js"></script>
-
         <script src="scripts/controllers/homeController.js"></script>
-
-        <script src="scripts/services/appService.js"></script>
-
         <script src="scripts/factories/githubAPIFactory.js"></script>
+        <script src="scripts/services/appService.js"></script>
     </body>
 </html>
