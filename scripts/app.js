@@ -1,11 +1,10 @@
-var CLIENT = {
-    ID: '',
-    SECRET: ''
-};
-
 var app = angular.module('app', [
     'ui.router'
 ])
+.constant('githubAPIKey', {
+    'id'    : '',
+    'secret': ''
+})
 .config(function($stateProvider) {
     $stateProvider
         .state('home', {

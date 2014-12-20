@@ -7,9 +7,9 @@ app.controller('homeController', function($scope, githubAPIFactory, appService) 
     $scope.repo = '';
 
     $scope.submitQuery = function() {
-        githubAPIFactory.getUser($scope.user, CLIENT)
+        githubAPIFactory.getUser($scope.user)
             .success(function(user) {
-                githubAPIFactory.getRepos(user.login, CLIENT)
+                githubAPIFactory.getRepos(user.login)
                     .success(function(repos) {
 
                         for(var i = 0; i < repos.length; i++) {
@@ -39,7 +39,7 @@ app.controller('homeController', function($scope, githubAPIFactory, appService) 
     function generateReport() {
         $scope.contributors = [];
 
-        githubAPIFactory.getContributors(appService.getUser(), appService.getRepo(), CLIENT)
+        githubAPIFactory.getContributors(appService.getUser(), appService.getRepo())
             .success(function(contributors) {
                 $scope.contributors = contributors;
             });
