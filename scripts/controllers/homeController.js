@@ -11,7 +11,6 @@ app.controller('homeController', function($scope, githubAPIFactory, appService) 
             .success(function(user) {
                 githubAPIFactory.getRepos(user.login)
                     .success(function(repos) {
-
                         for(var i = 0; i < repos.length; i++) {
                             if(repos[i].name.toLowerCase() === $scope.repo.toLowerCase()) {
                                 appService.setUser(user.login);
@@ -41,7 +40,20 @@ app.controller('homeController', function($scope, githubAPIFactory, appService) 
 
         githubAPIFactory.getContributors(appService.getUser(), appService.getRepo())
             .success(function(contributors) {
-                $scope.contributors = contributors;
+                for(var i = 0; i < contributors.length; i++) {
+                    $scope.contributors.push({
+                        name:                contributors[i].login,
+                        commits:             0,
+                        locAdded:            0,
+                        locDeleted:          0,
+                        issuesOpened:        0,
+                        issuesAssigned:      0,
+                        issuesClosed:        0,
+                        issueComments:       0,
+                        pullRequests:        0,
+                        pullRequestComments: 0
+                    });
+                }
             });
     }
 });
