@@ -24,6 +24,14 @@ app.factory('githubAPIFactory', function($http, githubAPIKey) {
                 url: 'https://api.github.com/repos/' + user + '/' + repo + '/contributors?client_id=' + githubAPIKey.id + '&client_secret=' + githubAPIKey.secret,
                 json: true
             });
+        },
+
+        getCommits: function(user, repo) {
+            return $http({
+                method: 'GET',
+                url: 'https://api.github.com/repos/' + user + '/' + repo + '/stats/contributors?client_id=' + githubAPIKey.id + '&client_secret=' + githubAPIKey.secret,
+                json: true
+            });
         }
     };
 });

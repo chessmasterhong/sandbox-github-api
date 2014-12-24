@@ -6,6 +6,8 @@ app.controller('homeController', function($scope, githubAPIFactory, appService) 
     $scope.user = '';
     $scope.repo = '';
 
+    $scope.contributors = [];
+
     $scope.submitQuery = function() {
         githubAPIFactory.getUser($scope.user)
             .success(function(user) {
@@ -20,7 +22,9 @@ app.controller('homeController', function($scope, githubAPIFactory, appService) 
                                 $scope.repo = repos[i].name;
 
                                 $scope.foundRepo = true;
+
                                 generateReport();
+
                                 break;
                             }
                         }
@@ -36,8 +40,6 @@ app.controller('homeController', function($scope, githubAPIFactory, appService) 
     };
 
     function generateReport() {
-        $scope.contributors = [];
-
         githubAPIFactory.getContributors(appService.getUser(), appService.getRepo())
             .success(function(contributors) {
                 for(var i = 0; i < contributors.length; i++) {
@@ -54,6 +56,34 @@ app.controller('homeController', function($scope, githubAPIFactory, appService) 
                         pullRequestComments: 0
                     });
                 }
+
+                updateCommits();
             });
+    }
+
+    function updateCommits() {
+        githubAPIFactory.getCommits(appService.getUser(), appService.getRepo())
+            .success(function(commits) {
+                var index = -1;
+
+                for(var i = 0; i < commits.length; i++) {
+                    index = findContributorIndex(commits[i].author.login);
+
+                    $scope.contributors[index].commits = commits[i].total;
+                }
+            });
+    }
+
+    // ===================
+    //  Utility Functions
+    // ===================
+    function findContributorIndex(contributorName) {
+        for(var i = 0; i < $scope.contributors.length; i++) {
+            if($scope.contributors[i].name === contributorName) {
+                return i;
+            }
+        }
+
+        return -1;
     }
 });
