@@ -8,9 +8,32 @@
 <div data-ng-if="foundRepo">
     <h1>Report for {{ user }}/{{ repo }}</h1>
 
+    <h2>Total Contributions to Date</h2>
     <table>
+        <tr>
+            <th>Contributor Name</th>
+            <th>Commit Count</th>
+            <th>Lines of Code Added</th>
+            <th>Lines of Code Deleted</th>
+            <th>Issues Opened</th>
+            <th>Issues Assigned</th>
+            <th>Issues Closed</th>
+            <th>Issue Comments</th>
+            <th>Pull Requests</th>
+            <th>Pull Request Comments</th>
+        </tr>
+
         <tr data-ng-repeat="contributor in contributors">
             <td>{{ contributor.name }}</td>
+            <td>{{ contributor.commits }}</td>
+            <td>{{ contributor.locAdded }}</td>
+            <td>{{ contributor.locDeleted }}</td>
+            <td>{{ contributor.issuesOpened }}</td>
+            <td>{{ contributor.issuesAssigned }}</td>
+            <td>{{ contributor.issuesClosed }}</td>
+            <td>{{ contributor.issueComments }}</td>
+            <td>{{ contributor.pullRequests }}</td>
+            <td>{{ contributor.pullRequestComments }}</td>
         </tr>
     </table>
 </div>
