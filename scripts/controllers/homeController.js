@@ -64,11 +64,8 @@ app.controller('homeController', function($scope, githubAPIFactory, appService) 
     function updateCommits() {
         githubAPIFactory.getCommits(appService.getUser(), appService.getRepo())
             .success(function(commits) {
-                var index = -1;
-
                 for(var i = 0; i < commits.length; i++) {
-                    index = findContributorIndex(commits[i].author.login);
-
+                    var index = findContributorIndex(commits[i].author.login);
                     $scope.contributors[index].commits = commits[i].total;
                 }
             });
